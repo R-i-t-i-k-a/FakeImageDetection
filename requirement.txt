@@ -1,0 +1,34 @@
+# Core Machine Learning Frameworks:
+tensorflow>=2.x # Used for building and training CNN models and the discriminator in the GAN [1-4]
+keras>=2.x # Typically included with TensorFlow, used for high-level API, model building, and utilities like ImageDataGenerator and callbacks [2-5]
+torch>=1.x # Used specifically for the StyleGAN2-ADA implementation [1, 4]
+torchvision>=0.x # Commonly used alongside PyTorch for image datasets and transformations (implied by PyTorch usage)
+
+# Numerical and Data Handling Libraries:
+numpy>=1.x # Essential for numerical operations and aggregating model predictions (e.g., in ensemble methods) [4]
+scikit-learn>=1.x # Used for data splitting (train_test_split with stratification), calculating evaluation metrics (accuracy, precision, recall, F1-score), and implementing meta-models for stacking (SVC, PCA, Logistic Regression) [4, 6-8]
+matplotlib>=3.x # Used for visualizing image samples during Exploratory Data Analysis (EDA) [9] and potentially for plotting performance metrics/confusion matrices [10-14]
+
+# Image Processing and Data Augmentation:
+ImageDataGenerator # This is a class from TensorFlow/Keras, essential for real-time data augmentation during training for the 140k dataset [5, 15] (Note: This is not a separate package to install via pip, but part of keras.preprocessing.image)
+albumentations>=1.x # An additional library mentioned for data augmentation techniques like flipping, rotation, zooming, etc. [15]
+Pillow>=9.x # Often a dependency for image processing libraries like Keras' ImageDataGenerator (implied)
+
+# Libraries for Model Architecture Support or Specific Functions:
+# Note: Specific model architectures like ResNet, VGG16, DenseNet, Xception, EfficientNet, StyleGAN2-ADA, and InceptionV3 are typically accessed via TensorFlow/Keras or PyTorch, not separate packages.
+
+# Libraries for Metrics or Utilities:
+# InceptionV3 model features are needed for FID calculation [4, 16, 17]. This model is usually loaded via TensorFlow or PyTorch. A dedicated FID calculation library might be helpful.
+# pytorch-fid # A common library for FID calculation when using PyTorch models (not explicitly mentioned, but a likely tool)
+
+# Explainable AI Libraries (Mentioned as Future Scope):
+# shap>=0.x # For SHapley Additive exPlanations [18]
+# lime>=0.x # For Local Interpretable Model-agnostic Explanations [18]
+
+# Other Potential Utilities:
+# tqdm>=4.x # Often used for displaying progress bars during training (not explicitly mentioned but common practice)
+
+# Hardware and Platform Considerations (Not Python Packages):
+# NVIDIA GPU with CUDA Toolkit # Required for hardware acceleration [19-22]
+# Anaconda # Python environment manager used [23-25]
+# Jupyter Notebook / Google Colab / Kaggle Notebook # Development environments/platforms used [3, 4, 16, 24-26]
